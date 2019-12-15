@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: go
+spec:
+  replicas: 3
+  selector: 
+    matchLabels:
+      name: go
+  template:
+    metadata:
+      labels:
+        name: go
+    spec:
+      containers:
+      - name: desafio-k8s
+        image: dsahara/desafio-k8s
+        ports:
+        - containerPort: 80
